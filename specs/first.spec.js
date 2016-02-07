@@ -1,8 +1,6 @@
-define(['jquery', 'underscore'], function($, _) {
+define(['app', 'jquery', 'underscore'], function(App, $, _) {
 
     describe('just checking', function() {
-
-        //testHelper.setup();
 
         it('works for app', function() {
             var testString = 'jquery is up and running';
