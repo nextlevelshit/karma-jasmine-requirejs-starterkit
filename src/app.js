@@ -2,9 +2,15 @@ define(function() {
 
     var App = {
         output: '',
-        render: function (message) {
-            this.output = message;
-        }
+        outputElement: '',
+
+        setOutputElement: function(element) {
+            this.outputElement = element;
+        },
+
+        render: function(message) {
+            this.outputElement.html(message);
+        },
     };
 
     return App;

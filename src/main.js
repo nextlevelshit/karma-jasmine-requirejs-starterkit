@@ -1,3 +1,4 @@
+// TODO: Try to use global config here
 requirejs.config({
     paths: {
         'app': 'app',
@@ -13,6 +14,6 @@ requirejs.config({
 });
 
 define(['app', 'jquery'], function (App, $) {
-    var app = new App($('body'));
-    app.render();
+    App.setOutputElement($('#message'));
+    App.render('App is running successfully ;)');
 });
