@@ -1,5 +1,6 @@
 requirejs.config({
     paths: {
+        'app': 'app',
         'jquery': '../node_modules/jquery/dist/jquery',
         'underscore': '../node_modules/underscore/underscore'
     },
