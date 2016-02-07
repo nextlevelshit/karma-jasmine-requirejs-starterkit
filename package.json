@@ -1,7 +1,7 @@
 {
   "name": "karma-jasmine-requirejs-starterkit",
   "version": "1.0.0",
-  "description": "A running test driven development (TDD) starterkit with included packages via requireJS",
+  "description": "A test driven development (TDD) starterkit with included node module packages via requireJS",
   "main": "src/main.js",
   "dependencies": {
     "jasmine-core": "^2.4.1",
@@ -27,5 +27,5 @@
     "test": "karma start"
   },
   "author": "nextlevelshit",
-  "license": "MIT"
+  "license": "GNU"
 }
