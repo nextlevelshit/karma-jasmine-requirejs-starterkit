@@ -3,13 +3,13 @@ var allTestFiles = [];
 
 // Get a list of all the test files to include
 Object.keys(window.__karma__.files).forEach(function(file) {
+    console.log('File available for tests:', normalizePath(file));
+
     if (TEST_REGEXP.test(file)) {
         // Normalize paths to RequireJS module names.
         // If you require sub-dependencies of test files to be loaded as-is (requiring file extension)
         // then do not normalize the paths
-        var normalizedTestModule = file.replace(/^\/base\/|\.js$/g, '');
-        console.log('Loaded test file:', normalizedTestModule);
-        allTestFiles.push(normalizedTestModule);
+        allTestFiles.push(normalizePath(file));
     }
 });
 
@@ -21,6 +21,7 @@ require.config({
     paths: {
         'jquery': 'node_modules/jquery/dist/jquery',
         'underscore': 'node_modules/underscore/underscore',
+        'app': 'src/app'
     },
 
     // example of using a shim, to load non AMD libraries (such as underscore)
@@ -36,3 +37,7 @@ require.config({
     // we have to kickoff jasmine, as it is asynchronous
     callback: window.__karma__.start
 });
+
+function normalizePath(filePath) {
+    return filePath.replace(/^\/base\/|\.js$/g, '');
+}
